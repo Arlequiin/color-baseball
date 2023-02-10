@@ -53,3 +53,15 @@ def all_elements_equal(lst):
         if element != first_element:
             return False
     return True
+
+def d_between_indexes(index1,index2,parent):
+    d=abs(parent.index(index1)-parent.index(index2))
+    if d==len(parent)-1:
+        d=1
+    return d
+
+def get_white_index(dico):
+    for i in range(len(dico.values())):
+        for j in range(len(list(dico.values())[i])):
+            if list(dico.values())[i][j]=='rgb(255,255,255)':
+                return (i,j)
