@@ -1,4 +1,4 @@
-def hsl_to_ansi(h, s, l, str):
+def hsl_to_ansi(h, s, l, str,rgb=False):
     h /= 360
     s /= 100
     l /= 100
@@ -21,7 +21,10 @@ def hsl_to_ansi(h, s, l, str):
     r = int((r + m) * 255)
     g = int((g + m) * 255)
     b = int((b + m) * 255)
-    return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r,g,b,str)
+    if rgb:
+        return (r,g,b)
+    else:
+      return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r,g,b,str)
 
 def to_rgb(r,g,b,text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r,g,b,text)

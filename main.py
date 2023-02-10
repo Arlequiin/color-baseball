@@ -28,3 +28,4 @@ while prod(truth)!=True:
     for e in d.keys():
         if all_elements_equal(e):
             truth[l.index(e)]=1
+print("En",shots,"coups!")
