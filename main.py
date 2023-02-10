@@ -12,11 +12,13 @@ for row in content:
         color_fill=[int(a) for a in color_fill]
         d[hsl_to_ansi(color_fill[0],color_fill[1],color_fill[2],color_fill1)]=result
 print(to_rgb(255,0,0,"OUTPUT >>>>>"))
+l=d.keys()
 print(d)
 print(show(d))
 truth=[False for i in range(len(d.keys()))]
 while prod(truth)!=True:
     
     #verification at each iteration
-    for e in d.keys:
-        
+    for e in d.keys():
+        if all_elements_equal(e):
+            truth[l.index(e)]=1

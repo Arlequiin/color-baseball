@@ -46,3 +46,10 @@ def prod(liste):
     for elem in liste:
         n*=elem
     return n
+
+def all_elements_equal(lst):
+    first_element = lst[0]
+    for element in lst:
+        if element != first_element:
+            return False
+    return True

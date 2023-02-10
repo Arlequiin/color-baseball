@@ -1,3 +1,4 @@
+http://www-verimag.imag.fr/~wack/baseball/
 # Chapitre 13 : Algo
 ## Baseball des couleurs
 
