@@ -18,14 +18,16 @@ print(show(d))
 truth=[False for i in range(len(d.keys()))]
 actual_base=0
 shots=0
-for a in l:
+while prod(truth)!=True:
+    #trouver les boules pouvant etre bougees
+    for a in l:
       if d_between_indexes(l[get_white_index(d)[0]],a,list(d.keys()))==1:
         print(a,"can be moved.")
-while prod(truth)!=True:
     #compteur de coups
     shots+=1
     #verification at each iteration
     for e in d.keys():
         if all_elements_equal(e):
             truth[l.index(e)]=1
+    print(show(d))
 print("En",shots,"coups!")
