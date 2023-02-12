@@ -1,3 +1,4 @@
+import os
 def hsl_to_ansi(h, s, l, str,rgb=False):
     h /= 360
     s /= 100
@@ -68,3 +69,18 @@ def get_white_index(dico):
         for j in range(len(list(dico.values())[i])):
             if list(dico.values())[i][j]=='rgb(255,255,255)':
                 return (i,j)
+
+def move(i2,j2,dico):
+    l=list(dico.keys())
+    i,j=get_white_index(dico)
+    if d_between_indexes(l[i],l[i2],l)==1:
+        print(dico[list(dico.keys())[i]])
+        dico[list(dico.keys())[i]][j]=dico[list(dico.keys())[i2]][j2]
+        dico[list(dico.keys())[i2]][j2]="rgb(255,255,255)"
+    else:
+        print(to_rgb(255,0,0,"Impossible d'effectuer ce mouvement, non-adjacent."))
+    print(dico)
+
+
+print(to_rgb(255,0,0,"This file is not supposed to be run. You shoud run the file `main.py`"))
+#os.system("/usr/local/bin/python3 /Users/arl/prog/nsi/tri/main.py")
