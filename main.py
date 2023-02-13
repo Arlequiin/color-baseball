@@ -1,6 +1,7 @@
 import re
 from functions import *
-from random import choice
+from random import *
+import time
 with open("data.html") as f:
     content=f.readlines()
 d={}
@@ -18,30 +19,32 @@ print(to_rgb(255,0,0,"OUTPUT >>>>>"))
 l=list(d.keys())
 print(d)
 print(show(d))
-truth=[False for i in range(len(d.keys()))]
-print(show(d))
+truth=[[False for i in range(3)] for i in range(len(l))]
 actual_base=0
 shots=0
-print(show(d))
-move(1,0,d)
-print(show(d))
-'''
-while prod(truth)!=True:
+chosen_base=1
+print(truth)
+while not prod(prod(sub_truth) for sub_truth in truth):
     #trouver les boules pouvant etre bougees
-    for i in range(len(l)):
-      if d_between_indexes(l[get_white_index(d)[0]],l[i],l)==1:
-        if l[i-1] in d[l[i]]:
-            print(i,i-1,"TO BE MOVED UPPER")
-        elif l[i]==d[l[i-1]]:
-            print("TO BE MOVED TOO")
-        else:
-            move()
+    iw,jw=get_white_index(d)
+    print(iw,chosen_base)
+    if d_between_indexes(l[iw],l[chosen_base],l)==1:
+        for i in range(2):
+               move(chosen_base,i,d)
+               if chosen_base<4:
+                 chosen_base+=1
+               else:
+                chosen_base=0
+
+        
+    
     #compteur de coups
     shots+=1
+    print(shots,"coups")
     #verification at each iteration
-    for e in d.keys():
+    for e in d:
         if all_elements_equal(e):
             truth[l.index(e)]=1
-    #print(show(d))
+    print(show(d))
+    time.sleep(0.5)
 print("En",shots,"coups!")
-'''
