@@ -52,7 +52,6 @@ def recherche_seq(L,e):
 ```
 
 - Recherche séquentielle triée
-
 $
 Recherche-seq-triée(liste,élément):\\
 \to \text{Si l'élément recherché est compris entre le premier et le dernier élément de la liste:}\\
@@ -96,3 +95,18 @@ def dicho(L,e):
         return False
 
 ```
+
+Dans une recherche sequentielle doubler la taille de la liste revient à doubler le nombre de vérification. Inversement en doublant la taille d'une liste avec la dichotomie seule une comparaison additionnelle est effectuée.
+
+__<underline>Recherche sequentielle</underline>__<br>
+Dans le pire cas, pour une liste de taille $n$, il y a n comparaisons. On dit que la __complexité__ de cet algorithme est d'ordre $n$ et on le note $O(n)$
+
+__<underline>Recherche par dichotomie</underline>__<br>
+Soit $x$ le nombre de divisions pour 2 successives pour obtenir une liste de taille $1$.<br>
+Pour une liste de taille $n$, on obtient :
+$$\frac{n}{2^x}=1$$
+
+
+# Complexité
+
+
