@@ -106,7 +106,16 @@ Soit $x$ le nombre de divisions pour 2 successives pour obtenir une liste de tai
 Pour une liste de taille $n$, on obtient :
 $$\frac{n}{2^x}=1$$
 
+## Fonction logarithme
 
+$$a = b \Leftrightarrow ln(a) = ln(b)$$
+$$ln(a^b)=b \cdot ln(a)$$
+$$\Leftrightarrow ln(n)=x ln(2)$$
+$$x = \frac{ln(n)}{ln(2)}$$
+$$\Leftrightarrow x = log_2(n)$$
+Si $log_{10}$, on écrit simplement $log$
+$$log_{10}(x)=\frac{ln(x)}{ln(3)}$$
+$$log_3(x)=\frac{ln(x)}{ln(3)}$$
 # Complexité
 
 
